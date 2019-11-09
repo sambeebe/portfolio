@@ -37,7 +37,7 @@ const Header = ({ meta, nav }: MetaType) => {
         }}
       >
         <Styled.a
-          aria-label={`${meta.siteTitle}, Back to homepage`}
+          aria-label={`${Sam Beebe}, Back to homepage`}
           as={Link}
           sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
           to="/"
@@ -65,7 +65,7 @@ const Header = ({ meta, nav }: MetaType) => {
           order: 3,
         }}
       >
-    
+
         <button
           sx={{ variant: `buttons.toggle`, fontWeight: `semibold` }}
           onClick={toggleColorMode}
