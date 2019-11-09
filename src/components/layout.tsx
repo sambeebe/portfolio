@@ -31,14 +31,14 @@ const Layout = ({ children, className }: LayoutProps) => {
             color: `background`,
           },
           a: {
-            transition: `all 0.3s ease-in-out`,
+            transition: `all 0.1s ease-in-out`,
           },
         })}
       />
       <SEO />
       <Header meta={meta} nav={nav} />
       <Main className={className}>{children}</Main>
-      <Footer />
+
     </Styled.root>
   )
 }
