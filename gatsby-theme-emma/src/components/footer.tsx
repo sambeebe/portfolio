@@ -3,7 +3,7 @@ import { Footer as ThemeFooter, Styled, Flex, jsx } from "theme-ui"
 
 const Footer = () => (
   <ThemeFooter>
-    Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+    dfghjk
     <br />
     <Flex
       sx={{
