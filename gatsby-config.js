@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@lekoarts/gatsby-theme-emma`,
+      resolve: `gatsby-theme-emma`,
       options: {},
     },
     {
