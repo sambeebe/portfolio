@@ -37,7 +37,8 @@ const Header = ({ meta, nav }: MetaType) => {
         }}
       >
         <Styled.a
-          aria-label={`${"Sam Beebe"}, Back to homepage`}
+          // aria-label={`${"Sam Beebe"}, Back to homepage`}
+          aria-label={`Sam Beebe, Back to homepage`}
           as={Link}
           sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
           to="/"
