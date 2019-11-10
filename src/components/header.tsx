@@ -43,7 +43,7 @@ const Header = ({ meta, nav }: MetaType) => {
           sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
           to="/"
         >
-        "Sam Beebe"
+        sam beebe
         </Styled.a>
       </div>
       <div

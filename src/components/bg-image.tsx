@@ -16,7 +16,8 @@ const BGImage = ({ children, color, slim }: Props) => {
     <div
       sx={{
         width: `100%`,
-        height: slim ? [`400px`, `500px`] : [`500px`, `600px`, `700px`, `40vw`],
+        // height: slim ? [`400px`, `500px`] : [`500px`, `600px`, `700px`, `40vw`],
+        height: `0%`,
         maxHeight: `1200px`,
         zIndex: 1,
         ".gatsby-image-wrapper": {
