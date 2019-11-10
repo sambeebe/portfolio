@@ -15,10 +15,10 @@ const BGImage = ({ children, color, slim }: Props) => {
   return (
     <div
       sx={{
-        width: `100%`,
+        width: `0%`,
         // height: slim ? [`400px`, `500px`] : [`500px`, `600px`, `700px`, `40vw`],
         height: `0%`,
-        maxHeight: `1200px`,
+        maxHeight: `0`,
         zIndex: 1,
         ".gatsby-image-wrapper": {
           position: `static !important`,
@@ -28,12 +28,12 @@ const BGImage = ({ children, color, slim }: Props) => {
             height: slim
               ? [`400px !important`, `500px !important`]
               : [`500px !important`, `600px !important`, `700px !important`, `40vw !important`],
-            maxHeight: `1200px`,
+            maxHeight: `0px`,
           },
         },
         "&:before": {
           content: `""`,
-          height: `100%`,
+          height: `0%`,
           left: 0,
           top: 0,
           position: `absolute`,
@@ -45,7 +45,7 @@ const BGImage = ({ children, color, slim }: Props) => {
         "&:after": {
           backfaceVisibility: `hidden`,
           content: `""`,
-          height: `100%`,
+          height: `0%`,
           left: 0,
           top: 0,
           position: `absolute`,
