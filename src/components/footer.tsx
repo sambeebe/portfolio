@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Footer as ThemeFooter, Styled, Flex, jsx } from "theme-ui"
+import React, { Component } from "react";
 import * as THREE from "three";
 
 var timestamp = 1;
