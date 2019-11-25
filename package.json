@@ -24,7 +24,8 @@
     "gatsby-plugin-offline": "^2.2.7",
     "gatsby-plugin-sitemap": "^2.2.19",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "three": "^0.110.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
