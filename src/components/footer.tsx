@@ -12,23 +12,6 @@ function onDocumentMouseMove(event) {
 }
 document.addEventListener("mousemove", onDocumentMouseMove, false);
 
-const Wrapper = styled.footer`
-  /* margin: 1rem 0 1rem 0; */
-  /* padding: 1rem ${props => props.theme.spacer.horizontal}; */
-  height: 50%;
-  left: 0;
-  /* position: absolute; */
-  top: 0;
-  position: absolute;
-  z-index: -1;
-  width: 50%;
-  text-align: center;
-  color: ${props => props.theme.colors.grey};
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.brand.primary};
-  }
-`;
 
 class App extends Component {
   componentDidMount() {
