@@ -1,21 +1,21 @@
 /** @jsx jsx */
 import { Footer as ThemeFooter, Styled, Flex, jsx } from "theme-ui"
-import React, { Component } from "react";
-import * as THREE from "three";
+import React, { Component } from "react"
+import * as THREE from "three"
 
 var timestamp = 1;
 var rand = Math.floor(Math.random() * 2 + 1);
 var mouseX = 0,
   mouseY = 0;
-function onDocumentMouseMove(event) {
-  mouseX = event.clientX * 0.001;
-  mouseY = event.clientY * 0.001;
-}
-document.addEventListener("mousemove", onDocumentMouseMove, false);
+// function onDocumentMouseMove(event) {
+//   mouseX = event.clientX * 0.001;
+//   mouseY = event.clientY * 0.001;
+// }
+// document.addEventListener("mousemove", onDocumentMouseMove, false);
 
 
 class App extends Component {
-  componentDidMount() {
+  // componentDidMount() {
     // BASIC THREE.JS THINGS: SCENE, CAMERA, RENDERER
     // This code is taken from Three.js Creating a scene manual
     // https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene
@@ -32,7 +32,7 @@ class App extends Component {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     // MOUNT INSIDE OF REACT
-    this.mount.appendChild(renderer.domElement); // mount a scene inside of React using a ref
+    // this.mount.appendChild(renderer.domElement); // mount a scene inside of React using a ref
 
     // ADD CUBE AND LIGHTS
     // https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry
