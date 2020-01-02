@@ -38,7 +38,7 @@ const Layout = ({ children, className }: LayoutProps) => {
       <SEO />
       <Header meta={meta} nav={nav} />
       <Main className={className}>{children}</Main>
- <Footer />
+
     </Styled.root>
   )
 }
