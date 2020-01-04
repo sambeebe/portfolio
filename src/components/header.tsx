@@ -28,7 +28,7 @@ const Header = ({ meta, nav }: MetaType) => {
       {!navEmpty && <Navigation nav={nav} />}
       <div
         sx={{
-          fontWeight: `bold`,
+
           fontSize: 4,
           display: `flex`,
           flex: navEmpty ? 1 : [`1 0 100%`, 1],
@@ -43,7 +43,7 @@ const Header = ({ meta, nav }: MetaType) => {
           sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
           to="/"
         >
-        sam beebe
+        Sam Beebe
         </Styled.a>
       </div>
       <div
