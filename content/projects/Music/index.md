@@ -1,7 +1,7 @@
 ---
 client: "Music"
 title: "Music"
-cover: "./rainbowsky.png"
+cover: "rainbowsky.png"
 date: "2020-01-04"
 service: " "
 color: "#8e9d31"

@@ -95,6 +95,7 @@ const ProjectItem = ({ node, style }: Props) => (
             backgroundColor: node.color,
             height: `100%`,
             left: 0,
+            opacity: 0.18,
             position: `absolute`,
             top: 0,
             width: `100%`,
