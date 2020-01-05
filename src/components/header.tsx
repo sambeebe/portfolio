@@ -29,7 +29,7 @@ const Header = ({ meta, nav }: MetaType) => {
       <div
         sx={{
 
-          fontSize: 4,
+          fontSize: 3,
           display: `flex`,
           flex: navEmpty ? 1 : [`1 0 100%`, 1],
           justifyContent: navEmpty ? `flex-start` : `center`,
