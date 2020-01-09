@@ -15,9 +15,12 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 //
 
 const style = {
-  height: 250,
-  width: 250, // we can control scene size by setting container dimensions
-  zIndex: -1
+  position: `absolute`,
+  width: "100%",
+  height: "100%",
+  zIndex: 0,
+  opacity:"1",
+  // background: "white",
 };
 export class App extends React.Component<{}> {
   componentDidMount() {
@@ -52,6 +55,7 @@ export class App extends React.Component<{}> {
     // https://threejs.org/docs/#examples/controls/OrbitControls
     this.controls = new OrbitControls(this.camera, this.el);
     this.renderer = new THREE.WebGLRenderer();
+    this.renderer.setClearColor( 0xffffff, 0);
     this.renderer.setSize(width, height);
     this.el.appendChild(this.renderer.domElement); // mount using React ref
   };
@@ -69,7 +73,7 @@ export class App extends React.Component<{}> {
     });
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
-
+this.scene.background = new THREE.Color( 0xffffff );
     const lights = [];
     lights[0] = new THREE.PointLight(0xffffff, 1, 0);
     lights[1] = new THREE.PointLight(0xffffff, 1, 0);
@@ -142,10 +146,11 @@ const Layout = ({ children, className }: LayoutProps) => {
           },
         })}
       />
-      <SEO />
-      <App/>
-      <Header meta={meta} nav={nav} />
 
+      <SEO />
+
+      <Header meta={meta} nav={nav} />
+    <App/>
       <Main className={className}>{children}</Main>
 
 
