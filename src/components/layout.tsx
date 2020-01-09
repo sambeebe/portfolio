@@ -148,7 +148,7 @@ const Layout = ({ children, className }: LayoutProps) => {
 
       <Main className={className}>{children}</Main>
 
-      <Footer />
+
 
     </Styled.root>
   )
