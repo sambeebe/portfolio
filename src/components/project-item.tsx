@@ -92,17 +92,17 @@ const ProjectItem = ({ node, style }: Props) => (
         />
         <div
           sx={{
-            backgroundColor: node.color,
+            backgroundColor: `black`,
             height: `100%`,
             left: 0,
-            opacity: 0.18,
+            opacity: 0.6,
             position: `absolute`,
             top: 0,
             width: `100%`,
             zIndex: -2,
           }}
         />
-        <div sx={{ fontSize: 5, fontWeight: `bold` }}>{node.client}</div>
+        <div sx={{ fontSize: 2, fontWeight: `bold` }}>{node.client}</div>
         <div sx={{ fontSize: 2 }}>{node.service}</div>
       </Link>
     </div>
