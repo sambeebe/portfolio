@@ -13,7 +13,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 //
-
+var uniforms;
+uniforms = {
+   time: { value: 1.0 },
+   mouseX: { value: 1.0 },
+   mouseY: { value: 1.0 }
+ };
 const style = {
   position: `absolute`,
   width: "100%",
@@ -22,6 +27,11 @@ const style = {
   opacity:"1",
   // background: "white",
 };
+
+var timestamp = 1;
+
+      var x = null;
+      var y = null;
 export class App extends React.Component<{}> {
   componentDidMount() {
     this.sceneSetup();
@@ -58,12 +68,124 @@ export class App extends React.Component<{}> {
     this.renderer.setClearColor( 0xffffff, 0);
     this.renderer.setSize(width, height);
     this.el.appendChild(this.renderer.domElement); // mount using React ref
+
+       // geo.onAfterRender = onAfterRender
+
+
+
   };
 
   // Here should come custom code.
   // Code below is taken from Three.js BoxGeometry example
   // https://threejs.org/docs/#api/en/geometries/BoxGeometry
   addCustomSceneObjects = () => {
+
+
+  var vertex = `
+  varying vec2 vUv;
+              void main()    {
+                  vUv = uv;
+                  gl_Position = vec4( position, 1.0 );
+              }
+  `;
+
+  var frag = `varying vec2 vUv;
+              uniform float time;
+              uniform float mouseX;
+              uniform float mouseY;
+              float hash(in vec2 p)
+              {
+                  p = fract(p * vec2(821.35, 356.17));
+                  p += dot(p, p+23.5);
+                  return fract(p.x*p.y);
+              }
+
+              float noise(in vec2 p)
+              {
+                  vec2 ipos = floor(p);
+                  vec2 fpos = fract(p);
+
+                  float a = hash(ipos + vec2(0, 0));
+                  float b = hash(ipos + vec2(1, 0));
+                  float c = hash(ipos + vec2(0, 1));
+                  float d = hash(ipos + vec2(1, 1));
+
+                  vec2 t = smoothstep(0.0, 1.0, fpos);
+                  return mix(mix(a, b, t.x), mix(c, d, t.x), t.y);
+              }
+
+              float fbm(in vec2 p)
+              {
+                  p += 1.13;
+
+                  float res = 0.0;
+                  vec2  m  = vec2(mouseX , mouseY);
+                  m*=.0005;
+                  float amp = 0.5+m.x;
+                  float freq = 2.0;
+                  for (int i = 0; i < 6; ++i)
+                  {
+                      res += amp*noise(freq*p);
+                      amp *= 0.5;
+                      freq *= 2.0;
+                  }
+                  return res;
+              }
+              vec3 palette(float t)
+              {
+                  vec3 a = vec3(1, 1, 1);
+                  vec3 b = vec3(0, 0.3, 0);
+                  vec3 c = vec3(1, 0.7, 0);
+                  vec3 d = vec3(1, 0, 0);
+
+                  if (t < 0.333)
+                  {
+                      return mix(a, b, 3.0*t);
+                  }
+                  else if (t < 0.666)
+                  {
+                      return mix(b, c, 3.0*(t - 0.3333));
+                  }
+                  else
+                  {
+                      return mix(c, d, 3.0*(t - 0.6666));
+                  }
+              }
+
+
+
+    void main()	{
+      vec2 uv = vUv;
+
+
+      float x = fbm(uv);
+      x = fbm(uv + x - 0.01*time);
+      x = fbm(uv + x + 0.03*time);
+
+      vec3 col = palette(x);
+      gl_FragColor = vec4(x,x,x,1.0)*1.25;
+    }
+
+  // `;
+
+
+      document.addEventListener("mousemove", onMouseUpdate, false);
+      document.addEventListener("mouseenter", onMouseUpdate, false);
+
+      function onMouseUpdate(e) {
+        x = e.pageX;
+        y = e.pageY;
+
+      }
+
+      function getMouseX() {
+        return x;
+      }
+
+      function getMouseY() {
+        return y;
+      }
+    const geo = new THREE.PlaneBufferGeometry(2, 2);
     const geometry = new THREE.CubeGeometry(2);
     const material = new THREE.MeshPhongMaterial({
       color: 0x156289,
@@ -71,9 +193,21 @@ export class App extends React.Component<{}> {
       side: THREE.DoubleSide,
       flatShading: true
     });
+    const mat = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: vertex,
+      fragmentShader: frag,
+      transparent: true,
+      blending: THREE.NormalBlending,
+      depthTest: false,
+      depthWrite: false
+    });
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
-this.scene.background = new THREE.Color( 0xffffff );
+    this.mesh = new THREE.Mesh(geo, mat);
+
+    this.scene.add(this.mesh);
+    this.scene.background = new THREE.Color( 0xffffff );
     const lights = [];
     lights[0] = new THREE.PointLight(0xffffff, 1, 0);
     lights[1] = new THREE.PointLight(0xffffff, 1, 0);
@@ -92,6 +226,11 @@ this.scene.background = new THREE.Color( 0xffffff );
     this.cube.rotation.x += 0.01;
     this.cube.rotation.y += 0.01;
 
+    timestamp += 0.0095;
+
+    uniforms["time"].value = timestamp;
+          uniforms["mouseX"].value = x;
+          uniforms["mouseY"].value = y;
     this.renderer.render(this.scene, this.camera);
 
     // The window.requestAnimationFrame() method tells the browser that you wish to perform
@@ -150,7 +289,7 @@ const Layout = ({ children, className }: LayoutProps) => {
       <SEO />
 
       <Header meta={meta} nav={nav} />
-    <App/>
+  <App/>
       <Main className={className}>{children}</Main>
 
 
