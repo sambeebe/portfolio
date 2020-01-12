@@ -121,7 +121,7 @@ export class App extends React.Component<{}> {
                   float res = 0.0;
                   vec2  m  = vec2(mouseX , mouseY);
                   m*=.0005;
-                  float amp = 0.5+m.x;
+                  float amp = .75+m.x;
                   float freq = 2.0;
                   for (int i = 0; i < 6; ++i)
                   {
