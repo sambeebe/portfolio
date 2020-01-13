@@ -102,8 +102,8 @@ const ProjectItem = ({ node, style }: Props) => (
             zIndex: -2,
           }}
         />
-        <div sx={{ fontSize: 2, fontWeight: `bold` }}>{node.client}</div>
-        <div sx={{ fontSize: 2 }}>{node.service}</div>
+        <div sx={{ fontSize: 1, fontWeight: `bold` }}>{node.client}</div>
+        <div sx={{ fontSize: 1 }}>{node.service}</div>
       </Link>
     </div>
   </animated.div>
