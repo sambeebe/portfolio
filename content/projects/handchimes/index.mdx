@@ -1,5 +1,5 @@
 ---
-client: "Jitter"
+client: "Handchimes"
 title: "Jitter"
 cover: "./chimes3.png"
 date: "2020-01-12"
@@ -9,6 +9,54 @@ color: "#8e9d31"
 Abacus (or “handchimes”) is a rigid body simulation and digital instrument created with
 Max/MSP. Collisions of rigid bodies are guided by a LeapMotion tracking device to create
 sound. Audio is then routed through Ableton.
+In Jitter, up to 72 cubes are created, each with its own unique physics constraint. Each
+cube is placed on a barslide with a variable limit of motion. As a result, each cube can be moved
+along a single axis in space. The collision strength of each cube (either with another cube or the
+LeapMotion device) can be measured as impulse. The impulse of each collision is used to
+generate a corresponding envelope for each pitch. Harder collisions last longer.
+FM synthesis was used to play back the pitches of each collision. Different scenes are
+created by varying FM index, the pitch space, as well as controlling the methods, grouping and
+density of collisions. The LeapMotion device gives expressive control over which collisions
+occur in a given scene. The result is an organic and varied music instrument. Video coming soon.
 
+####Pitch space
+Pitches are created according to the harmonic series. Each cube of each row of the barslide
+lattice gets a unique pitch. Each row has 12 pitches. The lowest row has pitches 0-11, the next
+12-23 and so on. The harmonic series is stretched at several points throughout the performance
+to create variations in the tuning system. The pitch set is also varied by offsetting the set by an
+octave or offsetting the global pitch by a given number of semitones. A few example pitch sets
+are given below. Any change in pitch space is accompanied with a change in color for all cubes.
+Each row has its own EQ band.
+(stretch factor 1.234, octave 0) =
+[ 3.640109 15.640109 22.659658 27.640108 31.503246 34.65966 37.328369 39.64011
+41.679211 43.503246 45.15329 46.65966 48.045387 49.328369 50.522797 51.64011
+52.689663 53.679211 54.615238 55.503246 56.347919 57.15329 57.922852 58.65966
+59.366383 60.045387 60.698761 61.328369 61.935883 62.522797 63.090466 63.64011
+64.172836 64.689659 65.191505 65.679207 66.153549 66.615242 67.064934 67.50325
+67.930733 68.347916 68.755287 69.15329 69.542343 69.922852 70.295174 70.65966
+71.016624 71.366386 71.709213 72.045387 72.375153 72.698761 73.016426 73.328369
+73.634789 73.935883 74.231827 74.522797 74.808952 75.090462 75.36747 75.640106
+75.908524 76.172836 76.433182 76.689659 76.942406 77.191505 77.437073 77.679207
+77.918007 78.153549 78.385933 78.615242 78.841545 79.064934 79.285477 79.50325 ]
+(stretch factor 1.018, octave 0) = [0.308852 12.308851 19.328402 24.308851 28.171989
+31.328402 33.997112 36.308853 38.34795 40.171989 41.822033 43.328403 44.71413
+45.997112 47.19154 48.308853 49.358406 50.34795 51.283981 52.171989 53.016663
+53.822033 54.591595 55.328403 56.035126 56.71413 57.3675 57.997112 58.604622 59.19154
+59.759209 60.308853 60.841579 61.358406 61.860249 62.34795 62.822292 63.283981
+63.733677 64.171989 64.6 65.016663 65.424026 65.822029 66.21109 66.591599 66.963921
+67.3284 67.685371 68.035126 68.377953 68.714127 69.0439 69.3675 69.685165 69.997108
+70.303535 70.604622 70.9 71.191536 71.477699 71.759209 72.036209 72.308853 72.577263
+72.841583 73.101921 73.358406 73.611145 73.860245 74.10582 74.347954 74.586746
+74.822296 75.05468 75.283981 75.510292 75.733681 75.954216 76.171989]
+(stretch factor 0.748, octave 1) = [6.973323 18.973324 25.992872 30.973324 34.83646
+37.99287 40.661583 42.973324 45.012424 46.83646 48.486504 49.99287 51.378601
+52.661583 53.85601 54.973324 56.022877 57.012424 57.948456 58.83646 59.681133
+60.486504 61.256069 61.99287 62.7 63.378601 64.031975 64.661583 65.269096 65.85601
+66.423683 66.97332 67.50605 68.022881 68.524719 69.012428 69.486763 69.948456
+70.398148 70.836464 71.263947 71.681129 72.088501 72.486504 72.875565 73.256065
+73.628387 73.992874 74.35 74.6996 75.042427 75.378601 75.708366 76.031975 76.34964
+76.661583 76.968002 77.269096 77.565041 77.85601 78.142174 78.423683 78.7 78.97332
+79.241737 79.50605 79.766396 80.022881 80.27562 80.524719 80.770287 81.012428
+81.251221 81.486763 81.719147 81.948456 82.174759 82.398148 82.61869 82.836464]
 ![Alt Text](chimes.png "chimes")
 ![Alt Text](chimes3.png "chimes")
