@@ -31,9 +31,9 @@ const Header = ({ meta, nav }: MetaType) => {
 
           fontSize: 3,
           display: `flex`,
-          flex: navEmpty ? 1 : [`1 0 100%`, 1],
-          justifyContent: navEmpty ? `flex-start` : `center`,
-          order: [1, 2],
+
+          justifyContent: navEmpty ? `flex-start` : `left`,
+          order: 1,
           zIndex: 1,
         }}
       >
@@ -46,29 +46,8 @@ const Header = ({ meta, nav }: MetaType) => {
         >
         Sam Beebe
         </Styled.a>
-      </div>
-      <div
-        sx={{
-          a: {
-            fontSize: 4,
-            color: `text`,
-            display: `flex`,
-            alignItems: `center`,
-            "&:hover": {
-              color: `primary`,
-            },
-            "&:not(:first-of-type)": {
-              ml: 2,
-            },
-          },
-          justifyContent: `flex-end`,
-          flex: 1,
-          display: `flex`,
-          order: 3,
-          zIndex: 1,
-        }}
-      >
-<SocialLinks />
+
+
 
       </div>
     </ThemeHeader>

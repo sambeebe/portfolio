@@ -13,9 +13,12 @@ const Navigation = ({ nav }: Props) => (
   <Flex
     as="nav"
     sx={{
+
+
+      justifyContent: `flex-end`,
       flex: 1,
-      justifyContent: `flex-start`,
-      order: [2, 1],
+      display: `flex`,
+      order: 3,
       zIndex: 1,
     }}
     aria-label="Primary Navigation"
