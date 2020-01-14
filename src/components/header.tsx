@@ -34,6 +34,7 @@ const Header = ({ meta, nav }: MetaType) => {
           flex: navEmpty ? 1 : [`1 0 100%`, 1],
           justifyContent: navEmpty ? `flex-start` : `center`,
           order: [1, 2],
+          zIndex: 1,
         }}
       >
         <Styled.a
@@ -64,6 +65,7 @@ const Header = ({ meta, nav }: MetaType) => {
           flex: 1,
           display: `flex`,
           order: 3,
+          zIndex: 1,
         }}
       >
 <SocialLinks />
