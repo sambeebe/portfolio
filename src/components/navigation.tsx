@@ -16,6 +16,7 @@ const Navigation = ({ nav }: Props) => (
       flex: 1,
       justifyContent: `flex-start`,
       order: [2, 1],
+      zIndex: 1,
     }}
     aria-label="Primary Navigation"
   >

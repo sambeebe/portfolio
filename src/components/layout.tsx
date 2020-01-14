@@ -120,9 +120,8 @@ export class App extends React.Component<{}> {
 
                   float res = 0.0;
                   vec2  m  = vec2(mouseX , mouseY);
-
                   m*=.0001075;
-                  float amp = .68+m.x;
+                  float amp = .64+m.x;
                   float freq = 2.0;
                   for (int i = 0; i < 6; ++i)
                   {
@@ -165,6 +164,7 @@ export class App extends React.Component<{}> {
 
       vec3 col = palette(x);
       gl_FragColor = vec4(x,x,x,1.0)*1.25;
+    //  gl_FragColor = vec4(col,1.0);
     }
 
   // `;
@@ -288,9 +288,9 @@ const Layout = ({ children, className }: LayoutProps) => {
       />
 
       <SEO />
-
+      <App/>
       <Header meta={meta} nav={nav} />
-  <App/>
+
       <Main className={className}>{children}</Main>
 
 
