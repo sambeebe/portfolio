@@ -4,11 +4,12 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Sam Beebe - Portfolio`,
+    siteTitleAlt: `Sam Beebe`,
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-emma`,
+      // See the theme's README for all available options
       options: {},
     },
     {
@@ -21,9 +22,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sam Beebe`,
-        short_name: `Sam Beebe`,
-        description: `my portfolio`,
+        name: `sambee.be`,
+        short_name: `sam`,
+        description: ``,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#b83280`,
