@@ -62,6 +62,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         display: `grid`,
         gridTemplateColumns: `repeat(6, minmax(15px, 1fr))`,
         width: `100%`,
+gridColumnGap: 4,
       }}
     >
       {trail.map((style, index) => (
