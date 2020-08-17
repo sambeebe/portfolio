@@ -60,9 +60,13 @@ const Projects = ({ projects }: ProjectsProps) => {
     <Layout
       sx={{
         display: `grid`,
-        gridTemplateColumns: `repeat(6, minmax(15px, 1fr))`,
+
+
+  gridTemplateColumns: `repeat(6, minmax(0, 500fr));`,
         width: `100%`,
-gridColumnGap: 4,
+        padding: 1,
+        gridColumnGap: 4,
+gridRowGap: 4,
       }}
     >
       {trail.map((style, index) => (
@@ -71,5 +75,5 @@ gridColumnGap: 4,
     </Layout>
   )
 }
-
+      //
 export default Projects
