@@ -25,23 +25,27 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
         content: `""`,
         display: `block`,
         paddingTop: `100%`,
+
       },
     }}
     style={style}
   >
     <div
       sx={{
-        left: 0,
+
+
         height: `100%`,
         position: `absolute`,
         top: 0,
+        left: 0,
+padding: 0,
         width: `100%`,
         a: {
           color: `white`,
           height: `100%`,
           left: 0,
           opacity: 0,
-          padding: 4,
+          padding: 2,
           position: `absolute`,
           top: 0,
           width: `100%`,
@@ -86,22 +90,23 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
             height: `100%`,
             filter: `invert(100%)`,
             zIndex: -1,
-            opacity: 0.08,
+            opacity: 0.18,
             objectFit: `cover`,
           }}
         />
         <div
           sx={{
-            backgroundColor: node.color,
+            backgroundColor: `#000000`,
             height: `100%`,
             left: 0,
             position: `absolute`,
             top: 0,
             width: `100%`,
+opacity: 0.58,
             zIndex: -2,
           }}
         />
-        <div sx={{ fontSize: 2, fontWeight: `bold` }}>{node.client}</div>
+        <div sx={{ fontSize: 1, fontWeight: `bold` }}>{node.client}</div>
         <div sx={{ fontSize: 1 }}>{node.service}</div>
       </Link>
     </div>
