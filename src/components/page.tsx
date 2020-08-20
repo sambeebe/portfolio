@@ -30,28 +30,13 @@ const Page = ({ data: { page } }: PageProps) => {
   return (
     <Layout>
       <SEO title={page.title} description={page.excerpt} pathname={page.slug} />
-      <Hero image={page.cover.childImageSharp.fluid} slim>
-        <Flex
-          sx={{
-            position: `absolute`,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            maxWidth: `5xl`,
-            margin: `0 auto`,
-            padding: 4,
-            zIndex: 2,
-            flexDirection: `column`,
-          }}
-        >
-          <animated.div style={titleProps}>
-            <Heading as="h1" variant="styles.h1">
-              {page.title}
-            </Heading>
-          </animated.div>
-        </Flex>
-      </Hero>
+
       <Container>
+      <animated.div style={titleProps}>
+        <Heading as="h1" variant="styles.h1">
+          {page.title}
+        </Heading>
+      </animated.div>
         <animated.div style={contentProps}>
           <MDXRenderer>{page.body}</MDXRenderer>
         </animated.div>
