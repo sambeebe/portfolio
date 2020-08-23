@@ -6,7 +6,7 @@ export default merge(tailwind, {
   useCustomProperties: true,
   colors: {
     primary: tailwind.colors.blue[4],
-    secondary: tailwind.colors.indigo[6],
+    secondary: tailwind.colors.black[6],
     modes: {
       dark: {
         text: tailwind.colors.white,
