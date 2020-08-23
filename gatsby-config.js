@@ -4,11 +4,21 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Sam Beebe`,
+    siteTitle: `sam beebe`,
+    siteTitleAlt: ``,
+    siteHeadline: ``,
+    siteUrl: `https://sambee.be`,
+    siteDescription: ``,
+    siteLanguage: `en`,
+    siteImage: ``,
+    author: ``,
+    basePath: options.basePath,
+    projectsPath: options.projectsPath,
+    pagesPath: options.pagesPath,
   },
   plugins: [
     {
-      resolve: `@sambeebe/portfolio`,
+      resolve: `@lekoarts/gatsby-theme-emma`,
       // See the theme's README for all available options
       options: {},
     },
