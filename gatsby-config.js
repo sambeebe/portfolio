@@ -4,9 +4,14 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitle: `sam beebe`,
-    siteTitleAlt: `Sam Beebe`,
-    siteDescription: `stuff`,
+      siteTitle: `sam beebe`,
+      siteTitleAlt: ``,
+      siteHeadline: ``,
+      siteUrl: `https://sambee.be`,
+      siteDescription: ``,
+      siteLanguage: `en`,
+      siteImage: ``,
+      author: ``,
   },
   plugins: [
     {
