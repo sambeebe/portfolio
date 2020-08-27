@@ -18,6 +18,7 @@ type ProjectItemProps = {
 }
 
 const ProjectItem = ({ node, style }: ProjectItemProps) => (
+
   <animated.div
     sx={{
       position: `relative`,
@@ -30,32 +31,47 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
     }}
     style={style}
   >
+
     <div
       sx={{
-
-
         height: `100%`,
         position: `absolute`,
         top: 0,
         left: 0,
-padding: 0,
+        padding: 0,
+        opacity: 1,
+        filter: `grayscale(100%)`,
         width: `100%`,
+        "&:hover": {
+          filter: `none`,
+          color: `white`,
+          opacity: 1,
+          transition: `all 0.4s ease-in-out`,
+          textDecoration: `none`,
+          filter: `grayscale(0%)`,
+        },
         a: {
+
           color: `white`,
           height: `100%`,
           left: 0,
-          opacity: 0,
+          opacity: 0.,
           padding: 2,
           position: `absolute`,
           top: 0,
           width: `100%`,
           zIndex: 10,
-          transition: `all 0.3s ease-in-out`,
+
+
           textDecoration: `none`,
+
           "&:hover": {
+            transition: `all 0.8s ease-in-out`,
+            filter: `none`,
             color: `white`,
             opacity: 1,
             textDecoration: `none`,
+            filter: `grayscale(0%)`,
           },
         },
       }}
@@ -88,26 +104,21 @@ padding: 0,
             bottom: 0,
             width: `100%`,
             height: `100%`,
+
             filter: `invert(100%)`,
             zIndex: -1,
-            opacity: 0.18,
+
+            opacity: 0.,
             objectFit: `cover`,
+
+            "&:hover": {
+
+            },
           }}
         />
-        <div
-          sx={{
-            backgroundColor: `#000000`,
-            height: `100%`,
-            left: 0,
-            position: `absolute`,
-            top: 0,
-            width: `100%`,
-opacity: 0.58,
-            zIndex: -2,
-          }}
-        />
-        <div sx={{ fontSize: 1, fontWeight: `bold` }}>{node.client}</div>
-        <div sx={{ fontSize: 1 }}>{node.service}</div>
+
+        <div sx={{ fontSize: 1,  display: `table`, fontWeight: `bold`, backgroundColor: `black`}}>{node.client}</div>
+        <div sx={{ fontSize: 1,   display: `table`, backgroundColor: `black`}}>{node.service}</div>
       </Link>
     </div>
   </animated.div>
