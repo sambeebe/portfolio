@@ -42,7 +42,7 @@ const Header = ({ meta, nav }: HeaderProps) => {
           sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
           to="/"
         >
-          Sam Beebe
+          sambee.be
         </TLink>
       </Flex>
 

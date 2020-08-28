@@ -18,7 +18,7 @@ type ProjectsProps = {
 
 const Projects = ({ projects }: ProjectsProps) => {
   const trail = useTrail(projects.length, {
-    from: { height: `0%` },
+    from: { height: `100%` },
     to: { height: `100%` },
   })
 

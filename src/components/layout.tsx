@@ -59,7 +59,7 @@ var timestamp = 1;
             0.1, // near plane
             1000 // far plane
           );
-          this.camera.position.z = 5; // is used here to set some distance from a cube that is located at z = 0
+          // this.camera.position.z = 5; // is used here to set some distance from a cube that is located at z = 0
           // OrbitControls allow a camera to orbit around the object
           // https://threejs.org/docs/#examples/controls/OrbitControls
           this.controls = new OrbitControls(this.camera, this.el);
@@ -121,21 +121,21 @@ var timestamp = 1;
                         vec2  m  = vec2(mouseX , mouseY);
                         m*=.0001075;
                         float amp = .64+m.x;
-                        float freq = 2.0;
+                        float freq = 2.10;
                         for (int i = 0; i < 6; ++i)
                         {
                             res += amp*noise(freq*p);
-                            amp *= 0.5;
-                            freq *= 2.0;
+                            amp *= 0.45;
+                            freq *= 2.0930;
                         }
                         return res;
                     }
                     vec3 palette(float t)
                     {
-                        vec3 a = vec3(1, 1, 1);
+                        vec3 a = vec3(.84, .5, 1);
                         vec3 b = vec3(0, 0.3, 0);
                         vec3 c = vec3(1, 0.7, 0);
-                        vec3 d = vec3(1, 0, 0);
+                        vec3 d = vec3(.4, 0, 0);
 
                         if (t < 0.333)
                         {
@@ -158,12 +158,13 @@ var timestamp = 1;
 
 
             float x = fbm(uv);
-            x = fbm(uv + x - 0.01*time);
+             x = fbm(uv + x - 0.01*time);
             x = fbm(uv + x + 0.03*time);
 
             vec3 col = palette(x);
-            gl_FragColor = vec4(x,x,x,1.0)*1.25;
-          //  gl_FragColor = vec4(col,1.0);
+            gl_FragColor = vec4(x,x,x,1.0)*1.85;
+// col*=1.5;
+           gl_FragColor = vec4(x,x,x,1.0)*1.975;
           }
 
         // `;
@@ -187,12 +188,7 @@ var timestamp = 1;
             }
           const geo = new THREE.PlaneBufferGeometry(2, 2);
           const geometry = new THREE.CubeGeometry(2);
-          const material = new THREE.MeshPhongMaterial({
-            color: 0x156289,
-            emissive: 0x072534,
-            side: THREE.DoubleSide,
-            flatShading: true
-          });
+
           const mat = new THREE.ShaderMaterial({
             uniforms: uniforms,
             vertexShader: vertex,
@@ -202,29 +198,19 @@ var timestamp = 1;
             depthTest: false,
             depthWrite: false
           });
-          this.cube = new THREE.Mesh(geometry, material);
           this.scene.add(this.cube);
           this.mesh = new THREE.Mesh(geo, mat);
 
           this.scene.add(this.mesh);
-          this.scene.background = new THREE.Color( 0xffffff );
+
           const lights = [];
-          lights[0] = new THREE.PointLight(0xffffff, 1, 0);
-          lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-          lights[2] = new THREE.PointLight(0xffffff, 1, 0);
 
-          lights[0].position.set(0, 200, 0);
-          lights[1].position.set(100, 200, 100);
-          lights[2].position.set(-100, -200, -100);
 
-          this.scene.add(lights[0]);
-          this.scene.add(lights[1]);
-          this.scene.add(lights[2]);
+
         };
 
         startAnimationLoop = () => {
-          this.cube.rotation.x += 0.01;
-          this.cube.rotation.y += 0.01;
+
 
           timestamp += 0.0095;
 
@@ -240,14 +226,11 @@ var timestamp = 1;
         };
 
         handleWindowResize = () => {
-          const width = this.el.clientWidth;
+          const width = this.el.clientWidth ;
           const height = this.el.clientHeight;
 
           this.renderer.setSize(width, height);
           this.camera.aspect = width / height;
-
-          // Note that after making changes to most of camera properties you have to call
-          // .updateProjectionMatrix for the changes to take effect.
           this.camera.updateProjectionMatrix();
         };
 
