@@ -22,8 +22,8 @@ type PageProps = {
 const Page = ({ data: { page } }: PageProps) => {
   const titleProps = useSpring({
     config: config.slow,
-    from: { opacity: 0, transform: `translate3d(0, -30px, 0)` },
-    to: { opacity: 1, transform: `translate3d(0, 0, 0)` },
+    from: { opacity: 0, transform: `translate3d(0, 30px, 0)` },
+    to: { opacity: 0, transform: `translate3d(0, 300px, 0)` },
   })
   const contentProps = useSpring({ config: config.slow, delay: 1000, from: { opacity: 1 }, to: { opacity: 1 } })
 
@@ -32,11 +32,6 @@ const Page = ({ data: { page } }: PageProps) => {
       <SEO title={page.title} description={page.excerpt} pathname={page.slug} />
 
       <Container>
-      <animated.div style={titleProps}>
-        <Heading as="h1" variant="styles.h1">
-          {page.title}
-        </Heading>
-      </animated.div>
         <animated.div style={contentProps}>
           <MDXRenderer>{page.body}</MDXRenderer>
         </animated.div>
