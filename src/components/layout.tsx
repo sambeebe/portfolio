@@ -164,7 +164,7 @@ var timestamp = 1;
             vec3 col = palette(x);
             gl_FragColor = vec4(x,x,x,1.0)*1.85;
 // col*=1.5;
-           gl_FragColor = vec4(x,x,x,1.0)*1.5;
+           gl_FragColor = vec4(x,col.x,x,1.0)*1.5;
           }
 
         // `;

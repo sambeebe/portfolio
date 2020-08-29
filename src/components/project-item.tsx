@@ -40,7 +40,7 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
         left: 0,
         padding: 0,
         opacity: 1,
-        filter: `grayscale(100%)`,
+        filter: `grayscale(0%)`,
         width: `100%`,
         "&:hover": {
           filter: `none`,
@@ -48,7 +48,7 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
           opacity: 1,
           transition: `all 0.4s ease-in-out`,
           textDecoration: `none`,
-          filter: `grayscale(0%)`,
+          filter: `grayscale(100%)`,
         },
         a: {
 
