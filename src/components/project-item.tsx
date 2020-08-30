@@ -46,7 +46,7 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
           filter: `none`,
           color: `white`,
           opacity: 1,
-          transition: `all 0.4s ease-in-out`,
+          transition: `all 0.2s ease-in-out`,
           textDecoration: `none`,
           filter: `grayscale(100%)`,
         },
@@ -66,7 +66,7 @@ const ProjectItem = ({ node, style }: ProjectItemProps) => (
           textDecoration: `none`,
 
           "&:hover": {
-            transition: `all 0.8s ease-in-out`,
+            transition: `all 0.2s ease-in-out`,
             filter: `none`,
             color: `white`,
             opacity: 1,
