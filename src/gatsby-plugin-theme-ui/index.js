@@ -57,6 +57,10 @@ export default merge(tailwind, {
       lineHeight: `body`,
       "--baseline-multiplier": 0.179,
       "--x-height-multiplier": 0.35,
+      color: `white`,
+      backgroundColor: `rgba(22,24,4,.5)`,
+      borderRadius: `3px`,
+      padding: `10px`,
     },
     h1: {
       fontSize: [5, 6],
