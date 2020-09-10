@@ -59,24 +59,13 @@ var timestamp = 1;
             0.1, // near plane
             1000 // far plane
           );
-          // this.camera.position.z = 5; // is used here to set some distance from a cube that is located at z = 0
-          // OrbitControls allow a camera to orbit around the object
-          // https://threejs.org/docs/#examples/controls/OrbitControls
           this.controls = new OrbitControls(this.camera, this.el);
           this.renderer = new THREE.WebGLRenderer();
           this.renderer.setClearColor( 0xffffff, 0);
           this.renderer.setSize(width, height);
           this.el.appendChild(this.renderer.domElement); // mount using React ref
-
-             // geo.onAfterRender = onAfterRender
-
-
-
         };
 
-        // Here should come custom code.
-        // Code below is taken from Three.js BoxGeometry example
-        // https://threejs.org/docs/#api/en/geometries/BoxGeometry
         addCustomSceneObjects = () => {
 
 
@@ -120,52 +109,30 @@ var timestamp = 1;
                         float res = 0.0;
                         vec2  m  = vec2(mouseX , mouseY);
                         m*=.0001075;
-                        float amp = .64+m.x;
+                        float amp = .864+m.x;
                         float freq = 2.10;
                         for (int i = 0; i < 6; ++i)
                         {
                             res += amp*noise(freq*p);
-                            amp *= 0.35+m.y;
-                            freq *= 2.0930;
+                            amp *= 0.37+m.y;
+                            freq *= 2.030;
                         }
                         return res;
                     }
-                    vec3 palette(float t)
-                    {
-                        vec3 a = vec3(.84, .5, 1);
-                        vec3 b = vec3(0, 0.3, 0);
-                        vec3 c = vec3(1, 0.7, 0);
-                        vec3 d = vec3(.4, 0, 0);
 
-                        if (t < 0.333)
-                        {
-                            return mix(a, b, 3.0*t);
-                        }
-                        else if (t < 0.666)
-                        {
-                            return mix(b, c, 3.0*(t - 0.3333));
-                        }
-                        else
-                        {
-                            return mix(c, d, 3.0*(t - 0.6666));
-                        }
+
+
+                    void main()	{
+                      vec2 uv = vUv;
+
+
+                      float x = fbm(uv);
+                      x = fbm(uv + x - 0.01*time);
+                      x = fbm(uv + x + 0.03*time);
+
+
+                      gl_FragColor = vec4(x,x,x,1.0)*1.5;
                     }
-
-
-
-          void main()	{
-            vec2 uv = vUv;
-
-
-            float x = fbm(uv);
-             x = fbm(uv + x - 0.01*time);
-            x = fbm(uv + x + 0.03*time);
-
-            vec3 col = palette(x);
-            gl_FragColor = vec4(x,x,x,1.0)*1.85;
-// col*=1.5;
-           gl_FragColor = vec4(x,x,x,1.0)*1.5;
-          }
 
         // `;
 
@@ -260,7 +227,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => {
             borderStyle: `none`,
           },
           pre: {
-            fontFamily: `monospace`,
+            fontFamily: `Times New Roman`,
             fontSize: `1em`,
           },
           "[hidden]": {
@@ -283,7 +250,10 @@ const Layout = ({ children, className = `` }: LayoutProps) => {
         {children}
       </Box>
 
+
+
     </React.Fragment>
+
   )
 }
 
