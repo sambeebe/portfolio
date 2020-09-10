@@ -39,7 +39,7 @@ const Header = ({ meta, nav }: HeaderProps) => {
         <TLink
           aria-label={`${meta.siteTitle}, Back to homepage`}
           as={Link}
-          sx={{ color: `text`, ":hover": { color: `primary`, textDecoration: `none` } }}
+          sx={{ color: `text`, ":hover": { textDecoration: `none`, color: `white`,backgroundColor: `black`} }}
           to="/"
         >
           sambee.be
