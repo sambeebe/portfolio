@@ -49,22 +49,27 @@ export default merge(tailwind, {
       boxSizing: `border-box`,
       textRendering: `optimizeLegibility`,
       WebkitFontSmoothing: `antialiased`,
+fontFamily: `Verdana`,
       MozOsxFontSmoothing: `grayscale`,
     },
     p: {
-      fontSize: [1, 2],
+      fontSize: [1, 1],
       letterSpacing: `-0.003em`,
       lineHeight: `body`,
       "--baseline-multiplier": 0.179,
       "--x-height-multiplier": 0.35,
+  fontFamily: `Verdana`,
       color: `white`,
       backgroundColor: `rgba(22,24,4,.5)`,
       borderRadius: `3px`,
       padding: `10px`,
+
+
     },
     h1: {
       fontSize: [5, 6],
       mt: 2,
+fontFamily: `Verdana`,
     },
     h2: {
       fontSize: [4, 5],
