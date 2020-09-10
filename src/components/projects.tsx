@@ -43,16 +43,16 @@ const Projects = ({ projects }: ProjectsProps) => {
   <Container>
     <Styled.p>
       <b>About</b> <br />
-      I recently graduated from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I like solving challenging problems at the intersection of art and engineering, and strive to be the bridge between sound, light and interaction.
+      I recently graduated from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I like solving challenging problems at the intersection of art and technology, and strive to be the bridge between sound, light and interaction.
 <br/>
 
 Email: {` `}
       <Styled.a href="samuelbeebe@gmail.com">
-       samuelbeebe@gmail.com
+       samuel.beebe@gmail.com
       </Styled.a>
 <br/>
 View {` `}
-      <Styled.a href="https://docdro.id/kT0B3gP">
+      <Styled.a href="https://docdro.id/hrA1lb6">
        resume
       </Styled.a>
 
