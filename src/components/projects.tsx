@@ -61,9 +61,9 @@ const Projects = ({ projects }: ProjectsProps) => {
       sx={{
         display: `grid`,
         gridTemplateColumns: `repeat(auto-fit, minmax(180px, 1fr))`,
-        padding: 1,
-        gridColumnGap: 1,
-        gridRowGap: 1,
+        padding: 3,
+        gridColumnGap: 3,
+        gridRowGap: 3,
         width: `100%`,
 
       }}
