@@ -52,7 +52,7 @@ Email: {` `}
       </Styled.a>
 <br/>
 View {` `}
-      <Styled.a href="https://docdro.id/hrA1lb6">
+      <Styled.a href="">
        resume
       </Styled.a>
 
