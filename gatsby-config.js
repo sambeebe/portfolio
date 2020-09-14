@@ -31,14 +31,14 @@ module.exports = {
       options: {
         name: `sambee.be`,
         short_name: `sam`,
-        description: ``,
+        description: `Sam Beebe portfolio`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#000000`,
         display: `standalone`,
         icons: [
           {
-            src: `/android-chrome-192x192.png`,
+            src: `/android-icon-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
