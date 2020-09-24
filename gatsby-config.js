@@ -39,7 +39,7 @@ module.exports = {
         icons: [
           {
             src: `/android-icon-192x192.png`,
-            sizes: `192x192`,
+            sizes: `2x4`,
             type: `image/png`,
           },
           {
