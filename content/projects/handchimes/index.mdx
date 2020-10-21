@@ -7,6 +7,8 @@ service: "Max/MSP"
 color: "#8e9d31"
 ---
 
+![chimes](chimes2.png "chimes")
+
 #### Handchimes
 Handchimes is a rigid body simulation and digital instrument created with
 Max/MSP. Collisions of rigid bodies are guided by a LeapMotion tracking device to create
@@ -22,6 +24,9 @@ created by varying FM index, the pitch space, as well as controlling the methods
 density of collisions. The LeapMotion device gives expressive control over which collisions
 occur in a given scene. The result is an organic and varied music instrument.
 
+Example physics constraints:
+![constraints](chimes5.png "constaints")
+
 #### Pitch space
 Pitches are created according to the harmonic series. Each cube of each row of the barslide
 lattice gets a unique pitch. Each row has 12 pitches. The lowest row has pitches 0-11, the next
@@ -30,5 +35,5 @@ to create variations in the tuning system. The pitch set is also varied by offse
 octave or offsetting the global pitch by a given number of semitones. Any change in pitch space is accompanied with a change in color for all cubes.
 Each row has its own EQ band.
 
-
+Recording of sounds produced:
 <iframe width="100%" height="265" src="https://clyp.it/4vv2hfqq/widget" frameborder="0"></iframe>
