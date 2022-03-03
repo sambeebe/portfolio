@@ -46,7 +46,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       Hi, I'm Sam. I recently graduated from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I enjoy solving challenging problems at the intersection of art and technology.
 <br/>
 
-Say hi: {` `}
+      {` `}
       <Styled.a href="samuel.beebe@gmail.com">
        samuel.beebe@gmail.com
       </Styled.a>
