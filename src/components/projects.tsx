@@ -28,7 +28,7 @@ const Projects = ({ projects }: ProjectsProps) => {
     <div
         sx={{
           display: `grid`,
-          gridTemplateColumns: `repeat(auto-fit, minmax(200px, 1fr))`,
+          gridTemplateColumns: `repeat(auto-fit, minmax(250px, 1fr))`,
           padding: 3,
           gridColumnGap: 3,
           gridRowGap: 3,
@@ -43,13 +43,14 @@ const Projects = ({ projects }: ProjectsProps) => {
   <Container>
     <Styled.p>
       <b>About</b> <br />
-      Hi, I'm Sam. I recently graduated from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I enjoy solving challenging problems at the intersection of art and technology.
+      Hi, I'm Sam. Welcome to my portfolio website. I received my B.A. from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I enjoy solving challenging problems at the intersection of art and technology.
 <br/>
 
       {` `}
       <Styled.a href="samuel.beebe@gmail.com">
        samuel.beebe@gmail.com
       </Styled.a>
+      <br/>
 <br/>
 
 
