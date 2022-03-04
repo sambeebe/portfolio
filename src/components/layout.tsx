@@ -81,57 +81,31 @@ var timestamp = 1;
                     uniform float time;
                     uniform float mouseX;
                     uniform float mouseY;
-                    float hash(in vec2 p)
+
+                    vec3 niceGrad(in vec2 uv)
                     {
-                        p = fract(p * vec2(821.35, 356.17));
-                        p += dot(p, p+23.5);
-                        return fract(p.x*p.y);
+                        float a = sqrt(1.0-uv.y);
+                        vec3 w3 = vec3(w,w*2.0,w*4.0);
+                        float h = pow((mouseY*.50)/ iResolution.y,1.0 / 15.0);
+                        h = 1.0 - clamp(h,0.2,1.0);
+                        vec3 hh = mix(vec3(1.0),vec3(1.0,q,0.0) * 1.5,h);
+                        return mix(w3,vec3(hh),a / 1.3);
                     }
 
-                    float noise(in vec2 p)
-                    {
-                        vec2 ipos = floor(p);
-                        vec2 fpos = fract(p);
-
-                        float a = hash(ipos + vec2(0, 0));
-                        float b = hash(ipos + vec2(1, 0));
-                        float c = hash(ipos + vec2(0, 1));
-                        float d = hash(ipos + vec2(1, 1));
-
-                        vec2 t = smoothstep(0.0, 1.0, fpos);
-                        return mix(mix(a, b, t.x), mix(c, d, t.x), t.y);
-                    }
-
-                    float fbm(in vec2 p)
-                    {
-                        p += 1.13;
-
-                        float res = 0.0;
-                        vec2  m  = vec2(mouseX , mouseY);
-                        m*=.0001075;
-                        float amp = .864+m.x;
-                        float freq = 2.10;
-                        for (int i = 0; i < 6; ++i)
-                        {
-                            res += amp*noise(freq*p);
-                            amp *= 0.37+m.y;
-                            freq *= 2.030;
-                        }
-                        return res;
-                    }
 
 
 
                     void main()	{
                       vec2 uv = vUv;
+                      vec3 grad = niceGrad(uv);
+                      vec3 col = 0.5 + 0.5*cos((iMouse.x*.00075)+uv.xyx+vec3(0,2,4));
+                      col = mix(grad,col,.25);
+                      col *= .75;
 
 
-                      float x = fbm(uv);
-                      x = fbm(uv + x - 0.01*time);
-                      x = fbm(uv + x + 0.03*time);
 
 
-                      gl_FragColor = vec4(x,x,x,1.0)*1.5;
+                      gl_FragColor = vec4(col,1.0);
                     }
 
         // `;
