@@ -45,10 +45,10 @@ const Projects = ({ projects }: ProjectsProps) => {
       <b>About</b> <br />
       hi, I'm Sam. I'm a Software Engineer at       <Styled.a href="https://www.nlight.net/">
              nLIGHT
-            </Styled.a>, where I work on computer graphics and real-time rendering for novel, high-resolution 3D cameras. </br>
+            </Styled.a>, where I work on computer graphics and real-time rendering for novel, high-resolution 3D cameras. <br/>
 
 I have a B.A. from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I graduated in May 2020.
-</br>
+<br/>
 
       {` `}
       <Styled.a href="samuel.beebe@gmail.com">
