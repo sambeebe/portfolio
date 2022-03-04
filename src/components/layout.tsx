@@ -84,6 +84,8 @@ var timestamp = 1;
 
                     vec3 niceGrad(in vec2 uv)
                     {
+                        float w = .1;
+                        float q = .7;
                         float a = sqrt(1.0-uv.y);
                         vec3 w3 = vec3(w,w*2.0,w*4.0);
                         float h = pow((mouseY*.50)/ iResolution.y,1.0 / 15.0);
@@ -92,19 +94,12 @@ var timestamp = 1;
                         return mix(w3,vec3(hh),a / 1.3);
                     }
 
-
-
-
                     void main()	{
                       vec2 uv = vUv;
                       vec3 grad = niceGrad(uv);
                       vec3 col = 0.5 + 0.5*cos((iMouse.x*.00075)+uv.xyx+vec3(0,2,4));
                       col = mix(grad,col,.25);
                       col *= .75;
-
-
-
-
                       gl_FragColor = vec4(col,1.0);
                     }
 
