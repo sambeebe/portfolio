@@ -98,8 +98,8 @@ var timestamp = 1;
                       vec2 uv = vUv;
                       vec3 grad = niceGrad(uv);
                       vec3 col = 0.5 + 0.5*cos((mouseX*.00075)+uv.xyx+vec3(0,2,4));
-                      col = mix(grad,col,.25);
-                      col *= .75;
+                      col = mix(grad,col,.5);
+                      //col *= .75;
                       gl_FragColor = vec4(col,1.0);
                     }
 
