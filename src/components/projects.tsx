@@ -33,7 +33,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           gridColumnGap: 3,
           gridRowGap: 3,
 
-          width: `90%`,
+          width: `100%`,
         }}
     >
     {trail.map((style, index) => (
