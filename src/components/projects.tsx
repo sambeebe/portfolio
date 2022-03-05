@@ -28,12 +28,12 @@ const Projects = ({ projects }: ProjectsProps) => {
     <div
         sx={{
           display: `grid`,
-          gridTemplateColumns: `repeat(auto-fit, minmax(300px, 1fr))`,
+          gridTemplateColumns: `repeat(auto-fit, minmax(230px, 1fr))`,
           padding: 3,
           gridColumnGap: 3,
           gridRowGap: 3,
 
-          width: `100%`,
+          width: `90%`,
         }}
     >
     {trail.map((style, index) => (
@@ -45,7 +45,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       <b>About</b> <br />
       Hi, I'm Sam. I'm a Software Engineer at       <Styled.a href="https://www.nlight.net/">
              nLIGHT
-            </Styled.a>, where I work on computer graphics and real-time rendering for high-resolution 3D cameras. <br/>
+            </Styled.a>, where I work on computer graphics and real-time rendering for high-resolution 3D cameras. <br/><br/>
 
 I have a B.A. from Tulane University, where I double majored in Music and Computer Science with a minor in Music Science and Technology. I graduated in May 2020.
 <br/>
